@@ -5,6 +5,12 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankaProje1", "BankaProje1\BankaProje1.csproj", "{5904434C-1D36-47BE-AAE1-1CF7D977CD9F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinForms", "WinForms", "{858CAEF3-3838-4935-AE52-0B6676217885}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{A97A37D9-B95F-4D1A-A7C8-FA5AA97F781A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HesapProje1", "HesapProje1\HesapProje1.csproj", "{34F2F585-216A-419F-A4B6-35D5C54FD54A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +21,17 @@ Global
 		{5904434C-1D36-47BE-AAE1-1CF7D977CD9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5904434C-1D36-47BE-AAE1-1CF7D977CD9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5904434C-1D36-47BE-AAE1-1CF7D977CD9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34F2F585-216A-419F-A4B6-35D5C54FD54A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34F2F585-216A-419F-A4B6-35D5C54FD54A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34F2F585-216A-419F-A4B6-35D5C54FD54A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34F2F585-216A-419F-A4B6-35D5C54FD54A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5904434C-1D36-47BE-AAE1-1CF7D977CD9F} = {858CAEF3-3838-4935-AE52-0B6676217885}
+		{34F2F585-216A-419F-A4B6-35D5C54FD54A} = {858CAEF3-3838-4935-AE52-0B6676217885}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB23C902-E163-436F-9968-DA9562262871}
