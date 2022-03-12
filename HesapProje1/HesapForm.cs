@@ -31,9 +31,6 @@ namespace HesapProje1
         private double sayi1, sayi2, sonuc;
         // Geçerli işlemci karakterleri
         private char[] islemKarakterleri = new char[] { '+', '-', '*', '/', '=' };
-        // Aktif işlemi gösteren karakter dizgisi
-        // (ki aslında ekran kutusundaki son satırın referansını saklar)
-        private string strIslem;
         #endregion
 
         public HesapForm()
@@ -42,8 +39,6 @@ namespace HesapProje1
             sayi1 = double.NaN;
             sayi2 = double.NaN;
             sonuc = double.NaN;
-            // işlem metni başlangıçta boş olsun
-            strIslem = string.Empty;
             
             InitializeComponent();
 
@@ -87,9 +82,8 @@ namespace HesapProje1
             tbEkran = new TextBox(); // ekranı temsil eden metin kutusu nesnesini oluştur.
             this.Controls.Add(tbEkran); // metin kutusunu formun kontroller koleksiyonuna ekliyoruz.
             tbEkran.BackColor = Color.LightBlue; // ayırt edici bir geriplan rengi belirle.
-            tbEkran.Multiline = false; // ekranı şimdilik tek satırlı gibi kullanacağız.
+            tbEkran.Multiline = true; // ekranı şimdilik tek satırlı gibi kullanacağız.
             tbEkran.BorderStyle = BorderStyle.FixedSingle; // ekran kutusu kenarlığı düz çizgi olsun.
-            // Ekran kutusuna boş satır ekle ve onu aktif işlem metni olarak kullan
             
             dugmeler = new Button[16]; // düğmeler dizisini oluştur
             // dizi elemanlarını yeni düğmeler olarak oluştur ve forma ekle
@@ -174,19 +168,18 @@ namespace HesapProje1
                     sayi1 = double.NaN;
                     sayi2 = double.NaN;
                     sonuc = double.NaN;
-                    strIslem = String.Empty;
-                    tbEkran.Text = strIslem;
+                    // Ekran kutusuna boş satır ekle
+                    tbEkran.AppendText(Environment.NewLine);
                 }
-
-                strIslem += dugme.Text;
-                tbEkran.Text = strIslem;
+                // yeni işlem son satırda gözükecek
+                tbEkran.AppendText(dugme.Text);
             }
         }
 
         private void IslemDugme_Click(object sender, EventArgs e)
         {
             // Bir işlem düğmesi tıklandığında,
-            // yalnızca bir işlem yapılabilsin diye
+            // yalnızca bir işlem yapılabilsin diye,
             // sonuç hesaplatacak eşittir düğmesi haricindeki
             // işlem düğmelerini iptal et.
             btnToplama.Enabled = false;
@@ -195,6 +188,12 @@ namespace HesapProje1
             btnBolme.Enabled = false;
         }
 
+        /// <summary>
+        /// Bu fonksiyonun tek amacı işlem düğmelerinin
+        /// aktiflik durumuna göre renklerini belirlemektir.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void IslemDugme_EnabledChanged(object sender, EventArgs e)
         {
             Button dugme = sender as Button;
@@ -215,8 +214,9 @@ namespace HesapProje1
 
         private void EsitDugme_Click(object sender, EventArgs e)
         {
-            // İşlemci karakterleri ayıraçlar olarak kullanarak 
-            // işlem metnini böl
+            // Ekran kutusunun son satırı aktif işlem metnidir
+            string strIslem = tbEkran.Lines.Last<string>();
+            // İşlemci karakterleri ayıraçlar olarak kullanarak  işlem metnini böl
             string[] islemArgumanlari = strIslem.Split(islemKarakterleri);
             sayi1 = Convert.ToDouble(islemArgumanlari[0]);
             sayi2 = Convert.ToDouble(islemArgumanlari[1]);
@@ -225,27 +225,21 @@ namespace HesapProje1
             if(strIslem.Contains(islemKarakterleri[0]))
             {
                 sonuc = sayi1 + sayi2;
-                strIslem += Convert.ToString(sonuc);
-                tbEkran.Text = strIslem;
             }
             else if (strIslem.Contains(islemKarakterleri[1]))
             {
                 sonuc = sayi1 - sayi2;
-                strIslem += Convert.ToString(sonuc);
-                tbEkran.Text = strIslem;
             }
             else if (strIslem.Contains(islemKarakterleri[2]))
             {
                 sonuc = sayi1 * sayi2;
-                strIslem += Convert.ToString(sonuc);
-                tbEkran.Text = strIslem;
             }
             else if (strIslem.Contains(islemKarakterleri[3]))
             {
                 sonuc = sayi1 / sayi2;
-                strIslem += Convert.ToString(sonuc);
-                tbEkran.Text = strIslem;
             }
+            // İşlem her neydiyse sonucu son satıra ekle
+            tbEkran.AppendText(Convert.ToString(sonuc));
 
             // İşlem düğmelerini tekrar aktifleştir
             btnToplama.Enabled = true;
