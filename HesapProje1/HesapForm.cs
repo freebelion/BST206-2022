@@ -33,6 +33,9 @@ namespace HesapProje1
         private char[] islemKarakterleri = new char[] { '+', '-', '*', '/', '=' };
         #endregion
 
+        /// <summary>
+        /// Kurucu fonksiyon form nesnesine ait üye değişkenlere ilk değerler atar.
+        /// </summary>
         public HesapForm()
         {
             // İşlem değerlerini geçersiz sayılar olarak başlat
@@ -82,7 +85,7 @@ namespace HesapProje1
             tbEkran = new TextBox(); // ekranı temsil eden metin kutusu nesnesini oluştur.
             this.Controls.Add(tbEkran); // metin kutusunu formun kontroller koleksiyonuna ekliyoruz.
             tbEkran.BackColor = Color.LightBlue; // ayırt edici bir geriplan rengi belirle.
-            tbEkran.Multiline = true; // ekranı şimdilik tek satırlı gibi kullanacağız.
+            tbEkran.Multiline = true; // ekran artık çok satırlı olacak.
             tbEkran.BorderStyle = BorderStyle.FixedSingle; // ekran kutusu kenarlığı düz çizgi olsun.
             
             dugmeler = new Button[16]; // düğmeler dizisini oluştur
@@ -253,7 +256,7 @@ namespace HesapProje1
             this.SuspendLayout(); // yeniden yerleştirme işlemlerini görüntüleme
 
             tbEkran.Height = this.ClientRectangle.Height / 3; // ekran yüksekliğini formun iç bölge yüksekliğiyle orantıla.
-            tbEkran.Left = marjin; // ekran kutusu formun sol kenarından marjin kadar içeride olacak.
+            tbEkran.Left = tbEkran.ClientRectangle.Left + marjin; // ekran kutusu formun sol kenarından marjin kadar içeride olacak.
             tbEkran.Top = marjin; // ekran kutusu formun üst kenarından marjin kadar içeride olacak.
             // ekran kutusu genişliği form iç bölge genişliğinden iki marjin eksik olacak
             tbEkran.Width = this.ClientRectangle.Width - 2 * marjin;
