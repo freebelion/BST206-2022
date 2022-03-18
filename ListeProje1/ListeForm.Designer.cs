@@ -57,7 +57,7 @@
             "Nevai"});
             this.lbListe.Location = new System.Drawing.Point(0, 29);
             this.lbListe.Name = "lbListe";
-            this.lbListe.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.lbListe.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lbListe.Size = new System.Drawing.Size(240, 277);
             this.lbListe.TabIndex = 1;
             this.lbListe.SelectedIndexChanged += new System.EventHandler(this.lbListe_SelectedIndexChanged);
