@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListeProje1", "ListeProje1\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrafikProje1", "GrafikProje1\GrafikProje1.csproj", "{C4BBEAFA-1EDC-4A1E-862E-51784E4D9861}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ders1_BankamatikProje", "Ders1_BankamatikProje\Ders1_BankamatikProje.csproj", "{04081C10-B109-46B1-8776-EEDE40C0C8D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{C4BBEAFA-1EDC-4A1E-862E-51784E4D9861}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4BBEAFA-1EDC-4A1E-862E-51784E4D9861}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4BBEAFA-1EDC-4A1E-862E-51784E4D9861}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04081C10-B109-46B1-8776-EEDE40C0C8D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04081C10-B109-46B1-8776-EEDE40C0C8D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04081C10-B109-46B1-8776-EEDE40C0C8D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04081C10-B109-46B1-8776-EEDE40C0C8D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{34F2F585-216A-419F-A4B6-35D5C54FD54A} = {858CAEF3-3838-4935-AE52-0B6676217885}
 		{2CDBE991-6EB4-42E6-9975-778AA10BFD9D} = {858CAEF3-3838-4935-AE52-0B6676217885}
 		{C4BBEAFA-1EDC-4A1E-862E-51784E4D9861} = {858CAEF3-3838-4935-AE52-0B6676217885}
+		{04081C10-B109-46B1-8776-EEDE40C0C8D8} = {A97A37D9-B95F-4D1A-A7C8-FA5AA97F781A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB23C902-E163-436F-9968-DA9562262871}
