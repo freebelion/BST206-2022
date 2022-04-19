@@ -13,7 +13,8 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="tbBakiye" Grid.Row="0" Background="AliceBlue"/>
+        <TextBlock x:Name="tbBakiye" Grid.Row="0" Background="AliceBlue"
+                   Text="{Binding Bakiye, StringFormat='C', UpdateSourceTrigger=PropertyChanged }" />
         <Grid Grid.Row="1" Background="SkyBlue">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
