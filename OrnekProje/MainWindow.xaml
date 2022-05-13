@@ -5,54 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OrnekProje"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1024">
-    <Window.DataContext>
-        <local:Market x:Name="OrnekMarket"/>
-    </Window.DataContext>
-    
-    <DockPanel>
-        <ToolBarTray DockPanel.Dock="Top">
-            <ToolBar>
-                <Button Click="AddCategory">
-                    <Image Source="Resources/add_category.png" Height="48"/>
-                </Button>
-            </ToolBar>
-        </ToolBarTray>
-        <ItemsControl ItemsSource="{Binding}" Background="SkyBlue">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal"/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <DockPanel>
-                        <ToolBarTray DockPanel.Dock="Top">
-                            <ToolBar>
-                                <TextBox Text="{Binding Name}"/>
-                                <Button Click="AddProduct">
-                                    <Image Source="Resources/add_product.png" Height="36"/>
-                                </Button>
-                            </ToolBar>
-                        </ToolBarTray>
-                        <ListBox ItemsSource="{Binding Products}">
-                            <ListBox.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBox Text="{Binding Name}" Height="25" />
-                                        <Button Margin="2" Click="SetImage">
-                                            <Button.Content>
-                                                <Image Height="50" Width="50"
-                                                    Source="{Binding ImageFile}"/>
-                                            </Button.Content>
-                                        </Button>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
-                    </DockPanel>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
-    </DockPanel>
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        
+    </Grid>
 </Window>

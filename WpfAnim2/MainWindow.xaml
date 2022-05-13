@@ -1,0 +1,113 @@
+﻿<Window x:Class="WpfAnim2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAnim2"
+        mc:Ignorable="d"
+        Title="MainWindow" SizeToContent="WidthAndHeight"
+        FontSize="16">
+    
+   <Window.Resources>
+      <Storyboard x:Key="Kaydirici">
+         <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)" 
+             From="0" To="100" Duration="0:0:5" AutoReverse="True"/>
+         <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)" 
+             From="0" To="50" Duration="0:0:3" AutoReverse="True"/>
+      </Storyboard>
+   </Window.Resources>
+    
+   <UniformGrid Name="KafesPanel" Rows="3" Columns="3"
+                Height="360" Width="540">
+      <Button Name="btnBoyutDegistir" Grid.Row="0" Grid.Column="0"
+                Content="Boyut Değiştir">
+         <Button.Triggers>
+            <EventTrigger RoutedEvent="Button.Click">
+               <BeginStoryboard>
+                  <Storyboard>
+                     <DoubleAnimation Storyboard.TargetProperty="Width"
+                         From="180" To="60" Duration="0:0:3" AutoReverse="True"/>
+                     <DoubleAnimation Storyboard.TargetProperty="Height"
+                         From="120" To="40" Duration="0:0:5" AutoReverse="True"/>
+                  </Storyboard>
+               </BeginStoryboard>
+            </EventTrigger>
+         </Button.Triggers>
+      </Button>
+      <Button Name="btnMarginDegistir" Grid.Row="0" Grid.Column="1"
+                Content="Margin Değiştir">
+         <Button.Triggers>
+            <EventTrigger RoutedEvent="Button.MouseEnter">
+               <BeginStoryboard>
+                  <Storyboard>
+                     <ThicknessAnimation Storyboard.TargetProperty="Margin"
+                         From="0" To="40,30,15,5" Duration="0:0:5" AutoReverse="True"/>
+                  </Storyboard>
+               </BeginStoryboard>
+            </EventTrigger>
+         </Button.Triggers>
+      </Button>
+      <Button Name="btnSaydamlikDegistir" Grid.Row="0" Grid.Column="2"
+                Content="Saydamlık Değiştir">
+         <Button.Triggers>
+            <EventTrigger RoutedEvent="Button.Click">
+               <BeginStoryboard>
+                  <Storyboard>
+                     <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                         From="1" To="0" Duration="0:0:5" AutoReverse="True"/>
+                  </Storyboard>
+               </BeginStoryboard>
+            </EventTrigger>
+         </Button.Triggers>
+      </Button>
+      <Button Name="btnRenkDegistir" Grid.Row="1" Grid.Column="0"
+              Content="Renk Değiştir"
+              Click="btnRenkDegistir_Click"/>
+      <Button Name="btnDondur" Grid.Row="1" Grid.Column="1"
+              Content="Döndür" Click="btnDondur_Click"
+              Width="150" Height="100">
+         <Button.RenderTransform>
+            <RotateTransform Angle="0" CenterX="25" CenterY="25" />
+         </Button.RenderTransform>
+      </Button>
+      <Button Name="btnKaydir" Grid.Row="1" Grid.Column="2"
+              Content="Kaydır" Click="btnKaydir_Click"
+              Margin="0,0,100,50">
+         <Button.RenderTransform>
+            <TranslateTransform X="0" Y="0"/>
+         </Button.RenderTransform>
+      </Button>
+      <Button Name="btnYamult" Grid.Row="2" Grid.Column="0"
+              Content="Yamult" Width="150" Height="100">
+         <Button.RenderTransform>
+            <SkewTransform AngleX="0" AngleY="0" CenterX="0" CenterY="0"/>
+         </Button.RenderTransform>
+         <Button.Triggers>
+            <EventTrigger RoutedEvent="Button.Click">
+               <BeginStoryboard>
+                  <Storyboard>
+                     <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(SkewTransform.AngleX)"
+                         From="0" To="15" BeginTime="0:0:0" Duration="0:0:3"/>
+                     <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(SkewTransform.AngleY)"
+                         From="0" To="30" BeginTime="0:0:3" Duration="0:0:3"/>
+                     <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(SkewTransform.AngleX)"
+                         From="15" To="-15" BeginTime="0:0:6" Duration="0:0:3"/>
+                     <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(SkewTransform.AngleY)"
+                         From="30" To="-5" BeginTime="0:0:9" Duration="0:0:3"/>
+                     <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(SkewTransform.AngleX)"
+                         From="-15" To="0" BeginTime="0:0:12" Duration="0:0:3"/>
+                     <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(SkewTransform.AngleY)"
+                         From="-5" To="0" BeginTime="0:0:15" Duration="0:0:3"/>
+                  </Storyboard>
+               </BeginStoryboard>
+            </EventTrigger>
+         </Button.Triggers>
+      </Button>
+      <Button Name="btn8" Grid.Row="2" Grid.Column="1"
+              Content="Siz bir şey uydurun">
+      </Button>
+      <Button Name="btn9" Grid.Row="2" Grid.Column="2"
+              Content="Buna da bir şey uydurun">
+      </Button>
+   </UniformGrid>
+</Window>
